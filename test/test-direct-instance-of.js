@@ -1,5 +1,6 @@
 var Code = require('code')
 var Lab = require('lab')
+var sinon = require('sinon')
 var util = require('util')
 
 var directInstanceOf = require('../index.js')
@@ -7,6 +8,8 @@ var directInstanceOf = require('../index.js')
 var lab = exports.lab = Lab.script()
 var describe = lab.describe
 var it = lab.it
+var beforeEach = lab.beforeEach
+var afterEach = lab.afterEach
 var expect = Code.expect
 
 function Animal () {
@@ -59,6 +62,21 @@ describe('directInstanceOf', function () {
     it('should throw an error if Class is not passed', function (done) {
       expect(directInstanceOf.bind(null, 'val')).to.throw(/Class.*required/)
       done()
+    })
+    describe('Object.getPrototypeOf does not exist', function () {
+      beforeEach(function (done) {
+        var err = new Error('Object.getPrototypeOf called on a non-object')
+        sinon.stub(Object, 'getPrototypeOf').throws(err)
+        done()
+      })
+      afterEach(function (done) {
+        Object.getPrototypeOf.restore()
+        done()
+      })
+      it('should catch Object.getPrototypeOf errors', function (done) {
+        expect(directInstanceOf(10, Number)).to.be.true()
+        done()
+      })
     })
   })
 })
