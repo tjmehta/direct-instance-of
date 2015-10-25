@@ -10,7 +10,7 @@ function directInstanceOf (val, Class) {
     throw new TypeError('`Class` is required')
   }
   return val.constructor === Class &&
-  getPrototypeOf(val) === Class.prototype
+    getPrototypeOf(val) === Class.prototype
 }
 
 // cross-node/browser compatible getPrototypeOf
