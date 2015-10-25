@@ -4,8 +4,9 @@
   "description": "Check if a value is a direct instance of a class (not inherited from)",
   "main": "index.js",
   "scripts": {
-    "test": "lab --assert code --threshold 100 test",
-    "lint": "standard"
+    "test": "npm run lint && lab --assert code --threshold 100 test",
+    "lint": "standard",
+    "format": "standard --format"
   },
   "repository": {
     "type": "git",
