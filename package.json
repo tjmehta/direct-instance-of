@@ -1,0 +1,40 @@
+{
+  "name": "direct-instance-of",
+  "version": "1.0.0",
+  "description": "Check if a value is a direct instance of a class (not inherited from)",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab --assert code --threshold 100 test",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjmehta/direct-instance-of.git"
+  },
+  "keywords": [
+    "instance",
+    "of",
+    "instance",
+    "of",
+    "direct",
+    "inherit",
+    "inheritance",
+    "type",
+    "check"
+  ],
+  "author": "Tejesh Mehta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjmehta/direct-instance-of/issues"
+  },
+  "homepage": "https://github.com/tjmehta/direct-instance-of",
+  "devDependencies": {
+    "code": "^1.5.0",
+    "lab": "^6.2.0",
+    "sinon": "^1.17.2",
+    "standard": "^5.3.1"
+  },
+  "dependencies": {
+    "101": "^1.2.0"
+  }
+}
