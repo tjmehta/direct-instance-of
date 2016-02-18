@@ -4,7 +4,7 @@ module.exports = directInstanceOf
 
 function directInstanceOf (val, Class) {
   if (!exists(val)) {
-    throw new TypeError('`val` is required')
+    return false
   }
   if (!exists(Class)) {
     throw new TypeError('`Class` is required')
