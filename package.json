@@ -1,6 +1,6 @@
 {
   "name": "direct-instance-of",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Check if a value is a direct instance of a class (not inherited from)",
   "main": "index.js",
   "scripts": {
