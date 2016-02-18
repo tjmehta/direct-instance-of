@@ -55,8 +55,8 @@ describe('directInstanceOf', function () {
   })
 
   describe('errors', function () {
-    it('should throw an error if val is not passed', function (done) {
-      expect(directInstanceOf).to.throw(/val.*required/)
+    it('should return false if val is not passed', function (done) {
+      expect(directInstanceOf(null, Object)).to.be.false()
       done()
     })
     it('should throw an error if Class is not passed', function (done) {
